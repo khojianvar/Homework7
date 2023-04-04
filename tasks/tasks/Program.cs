@@ -8,18 +8,25 @@
             FillArray(arr);
             Console.WriteLine();
             int maxSum=0;
+            int sumfirst = 0;
             for (int i = 0; i < arr.Length; i++)
             {
                 int sum = 0;
                 for (int j = 0; j < arr[i].Length; j++)
                 {
+                    if(i==0)
+                    {
+                        sumfirst += arr[i][j];
+                    }
                     sum += arr[i][j];
                 }
-                Console.WriteLine($"{1+i}st row`s sum: {sum}");
+                Console.WriteLine($"{1+i} row`s sum: {sum}");
+                maxSum = sumfirst;
                 if(maxSum<sum)
                 {
                     maxSum= sum;
                 }
+                
             }
             Console.WriteLine();
             Console.WriteLine($"Max summ in rows: {maxSum}");
@@ -42,7 +49,7 @@
             {
                 for (int j = 0; j < array1[i].Length; j++)
                 {
-                    array1[i][j] = random.Next(1, 10);
+                    array1[i][j] = random.Next(-11, -1);
                     Console.Write($" {array1[i][j]}");
                 }
                 Console.WriteLine();
